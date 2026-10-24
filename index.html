@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sala de escape de farmacología: El último turno de la Dra. Digitalis</title>
+<meta name="description" content="5 acertijos encadenados y guía lógica con caso integrador (intoxicación digitálica). Basado en Castells (Farmacología en enfermería) y Adams (Farmacología para enfermería).">
+<style>
+:root{--bg:#fff;--fg:#1f2430;--muted:#5b6475;--line:#d6dae3;--card:#f5f7fb;--accent:#0b5cad;--warn:#a4410b}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e8eaf0;--muted:#9aa3b5;--line:#2c3340;--card:#1c212b;--accent:#6fb1ff;--warn:#ffa56b}}
+body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--fg);max-width:60rem;margin:0 auto;padding:1.25rem}
+h1{font-size:1.7rem;margin:.2em 0}h2{font-size:1.3rem;margin-top:2rem;border-bottom:2px solid var(--accent);padding-bottom:.2em}h3{font-size:1.1rem;margin:.2em 0}
+article.acertijo,section.caja{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:1rem 0}
+.meta{color:var(--muted);font-size:.9rem}.sol{border-left:4px solid var(--warn);padding-left:.8rem}.ref{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:.35rem .6rem;text-align:left;vertical-align:top}th{background:var(--card)}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}pre{background:var(--card);border:1px solid var(--line);padding:.8rem;overflow-x:auto;border-radius:8px}
+</style>
+</head>
+<body>
+<main id="sala-escape" data-version="1.0" data-duracion-min="60" data-num-acertijos="5">
+
+<header id="metadata">
+<h1 id="titulo">El último turno de la Dra. Digitalis</h1>
+<dl>
+<dt>Asignatura</dt><dd data-campo="asignatura">Farmacología</dd>
+<dt>Nivel</dt><dd data-campo="nivel">Segundo año, Licenciatura en Enfermería</dd>
+<dt>Duración</dt><dd data-campo="duracion_min">60</dd>
+<dt>Equipos</dt><dd data-campo="equipos">4 a 6 equipos de 3 a 5 alumnos</dd>
+<dt>Bibliografía base</dt>
+<dd data-campo="bibliografia">
+<span data-libro="castells">Castells Molina, S. y Hernández Pérez, M. <i>Farmacología en enfermería</i>. Elsevier (PDF adjunto).</span><br>
+<span data-libro="adams">Adams, M.P., Holland, L.N. y Bostwick, P.M. <i>Farmacología para enfermería. Un enfoque fisiopatológico</i>, 2.ª ed. Pearson, 2009 (PDF adjunto).</span>
+</dd>
+</dl>
+<p class="meta" id="nota-edicion"><b>Nota sobre las páginas citadas:</b> en el PDF de Castells adjunto, las primeras páginas muestran el índice de la 3.ª edición, pero el cuerpo del libro tiene otra numeración de capítulos (p. ej., farmacocinética es el cap. 2, p. 11, y los glucósidos cardíacos son el cap. 24, p. 203). Las referencias de este documento usan la numeración impresa en el cuerpo del PDF adjunto. Si el docente trabaja con otro ejemplar, debe ajustar los números de capítulo y página.</p>
+<h3>Objetivos</h3>
+<ol id="objetivos">
+<li data-obj="1">Aplicar los cinco correctos de la administración y detectar errores de prescripción.</li>
+<li data-obj="2">Interpretar datos farmacocinéticos básicos (semivida, estado estable, eliminación renal).</li>
+<li data-obj="3">Reconocer reacciones adversas e interacciones de la digoxina y los diuréticos.</li>
+<li data-obj="4">Calcular dosis y velocidad de goteo de una perfusión intravenosa de forma segura.</li>
+<li data-obj="5">Seleccionar el antídoto adecuado y priorizar las acciones de enfermería.</li>
+</ol>
+</header>
+
+<section id="narrativa">
+<h2>Narrativa</h2>
+<p data-bloque="introduccion">Son las 03:00 en la unidad de medicina interna. La Dra. Digitalis, farmacóloga de guardia, desapareció dejando una nota: «El paciente de la cama 12 empeora y la clave está en su medicación. Resuelvan mis cinco acertijos en orden y abrirán el botiquín de urgencias. Tienen 60 minutos».</p>
+<p data-bloque="mision"><b>Misión:</b> descubrir qué le ocurre al paciente, corregir la causa y abrir el botiquín antes de que termine el tiempo.</p>
+<p data-bloque="final_exito"><b>Final feliz:</b> el botiquín se abre, el equipo prioriza bien las acciones y el paciente se estabiliza. La Dra. Digitalis aparece y felicita al equipo.</p>
+<p data-bloque="final_fracaso"><b>Si el tiempo se agota:</b> el docente revela el caso resuelto y se hace el debriefing.</p>
+</section>
+
+<section id="caso-integrador">
+<h2>Caso integrador</h2>
+<table id="paciente" data-paciente="ramon-torres">
+<tr><th>Paciente</th><td>Ramón Torres, 72 años, cama 12</td></tr>
+<tr><th>Diagnósticos</th><td>Insuficiencia cardíaca crónica con fibrilación auricular</td></tr>
+<tr><th>Medicación habitual</th><td>Digoxina 0,25 mg VO cada 24 h; furosemida 40 mg VO cada 24 h; ibuprofeno 400 mg por automedicación (dolor de rodilla)</td></tr>
+<tr><th>Cuadro actual</th><td>Frecuencia cardíaca 44 lpm, náuseas, anorexia, visión borrosa amarillenta, mareo</td></tr>
+<tr><th>Laboratorio</th><td>Potasio 2,9 mEq/L (referencia ficticia del laboratorio: 3,5 a 5,0); creatinina 1,6 mg/dL; digoxinemia 2,6 ng/mL (se entrega solo en el desafío final)</td></tr>
+</table>
+<p class="sol" id="solucion-caso"><b>Solución del caso:</b> intoxicación digitálica favorecida por hipopotasemia (furosemida), edad y deterioro de la función renal, con automedicación con un AINE que agrava el cuadro. Acciones: no administrar más digoxina y avisar al médico, tomar el pulso y obtener ECG, solicitar potasio, electrolitos y digoxinemia, reponer potasio de forma diluida y lenta, y preparar anticuerpos antidigoxina (Fab) si hay arritmia grave.</p>
+<p class="ref">Base en los libros: Castells cap. 24, pp. 203-206 (toxicidad, factores predisponentes, tratamiento); Adams cap. 24, pp. 339-341.</p>
+</section>
+
+<section id="acertijos">
+<h2>Los cinco acertijos</h2>
+
+<article class="acertijo" id="acertijo-1" data-orden="1" data-dificultad="1" data-tiempo-min="8" data-respuesta="DIGOXINA" data-tipo-respuesta="palabra" data-desbloquea="caja-1">
+<h3>1. Los correctos que no lo eran</h3>
+<p class="meta">Tema: administración segura y errores de medicación. Materiales: orden médica impresa, pulsera de identificación, ficha de dosis habituales.</p>
+<p class="ref" data-referencias="1">Adams cap. 4, p. 29 (cinco correctos) y cap. 9, pp. 89-98 y p. 92 (usar cero antes del decimal); Castells cap. 24, pp. 205-206 (dosis de 0,25 mg, no usar vía intramuscular, leer bien el principio activo).</p>
+<p data-bloque="narrativa">«Antes de curar, verifica. Tres errores se esconden en la orden. Dime qué fármaco los protagoniza».</p>
+<p data-bloque="enunciado"><b>Enunciado:</b> compara la orden con la pulsera y la ficha. Identifica tres errores, cada uno ligado a uno de los cinco correctos, y escribe el fármaco con margen terapéutico muy estrecho implicado.</p>
+<table data-bloque="datos">
+<tr><th>Orden médica</th><td>Paciente: TORRE, Ramón, cama 12<br>Digoxina 2,5 mg IM cada 24 h<br>Furosemida 40 mg VO cada 24 h</td></tr>
+<tr><th>Pulsera</th><td>TORRES, Ramón</td></tr>
+<tr><th>Ficha de dosis</th><td>Digoxina: comprimidos y ampollas de 0,25 mg; mantenimiento habitual 125 a 250 µg al día; vía oral o intravenosa lenta</td></tr>
+</table>
+<div class="sol" data-bloque="solucion">
+<ol>
+<li data-error="paciente">Paciente incorrecto: Torre en la orden y Torres en la pulsera.</li>
+<li data-error="dosis">Dosis incorrecta: 2,5 mg es diez veces la dosis habitual de 0,25 mg.</li>
+<li data-error="via">Vía incorrecta: la vía intramuscular es dolorosa y puede lesionar el tejido; la digoxina se da por vía oral o intravenosa lenta.</li>
+</ol>
+<p>Palabra clave: <b data-codigo="DIGOXINA">DIGOXINA</b>. Ante una duda de identidad, dosis o vía, enfermería no administra y consulta.</p>
+</div>
+<ol class="pistas" data-bloque="pistas">
+<li>Compara letra por letra el nombre de la orden con el de la pulsera.</li>
+<li>Compara el número de la dosis con la ficha: fíjate en la coma decimal.</li>
+<li>Es un glucósido que viene de la planta Digitalis.</li>
+</ol>
+<p data-bloque="desbloquea"><b>Desbloquea:</b> caja 1, que contiene la ficha técnica del fármaco.</p>
+</article>
+
+<article class="acertijo" id="acertijo-2" data-orden="2" data-dificultad="2" data-tiempo-min="10" data-respuesta="15" data-tipo-respuesta="numero" data-desbloquea="tarjeta-15">
+<h3>2. El reloj de la sangre</h3>
+<p class="meta">Tema: farmacocinética (semivida, meseta o estado estable, eliminación renal). Materiales: ficha técnica de la caja 1, calculadora.</p>
+<p class="ref" data-referencias="2">Adams cap. 5, pp. 53-54 (semivida, meseta) y cap. 24, p. 339 (ficha de digoxina: semivida de 3 a 4 días); Castells cap. 2, pp. 11-15 y cap. 24, pp. 203 y 206 (eliminación renal inalterada, muestra tras 7 días con la misma dosis y 6 a 8 h después de la última toma).</p>
+<p data-bloque="narrativa">«Un fármaco tarda en llegar a su equilibrio y también en irse. El número de días que busques será la tarjeta que debes abrir».</p>
+<p data-bloque="enunciado"><b>Enunciado:</b> con la semivida más corta de la ficha (3 días) y la regla didáctica de que se necesitan unas 5 semividas para alcanzar la meseta, calcula los días hasta el estado estable con 0,25 mg diarios.</p>
+<table data-bloque="datos">
+<tr><th>Ficha técnica</th><td>Inicio VO: 30-90 min; pico VO: 4-6 h; semivida: 3-4 días; duración del efecto: 6-8 días; excreción principalmente renal e inalterada</td></tr>
+<tr><th>Regla</th><td>Estado estable aproximado = 5 × semivida</td></tr>
+</table>
+<div class="sol" data-bloque="solucion">
+<p>5 × 3 días = <b data-codigo="15">15</b> días. Con la semivida de 4 días serían 20 días: por eso la toxicidad puede aparecer semanas después de un cambio de dosis.</p>
+<p data-bonus="1"><b>Bonus (+5 puntos):</b> ¿qué le pasa a la semivida si la creatinina está elevada? Respuesta: aumenta, porque la digoxina sale por el riñón y se acumula.</p>
+<p data-bonus="2"><b>Bonus (+5 puntos):</b> ¿cuándo se extrae una digoxinemia válida? Respuesta: tras al menos 7 días con la misma dosis y 6 a 8 h después de la última toma.</p>
+</div>
+<ol class="pistas" data-bloque="pistas">
+<li>Se necesitan alrededor de cinco semividas para llegar a la meseta.</li>
+<li>Usa el valor menor de la semivida de la ficha.</li>
+<li>5 × 3 está entre 14 y 16.</li>
+</ol>
+<p data-bloque="desbloquea"><b>Desbloquea:</b> la tarjeta 15 del archivo clínico (20 tarjetas numeradas; solo la 15 es la historia correcta).</p>
+</article>
+
+<article class="acertijo" id="acertijo-3" data-orden="3" data-dificultad="3" data-tiempo-min="12" data-respuesta="POTASIO" data-tipo-respuesta="palabra" data-desbloquea="sobre-orden-kcl">
+<h3>3. El color amarillo de la alarma</h3>
+<p class="meta">Tema: reacciones adversas e interacciones (digoxina, diuréticos de asa, AINE). Materiales: tarjeta 15 del archivo clínico.</p>
+<p class="ref" data-referencias="3">Castells cap. 24, pp. 204-206 (efectos adversos, factores predisponentes, interacciones) y cap. 28, p. 242 (tabla 28-3) y p. 244 (puntos importantes para enfermería); Adams cap. 24, p. 339 (efectos adversos e interacciones).</p>
+<p data-bloque="narrativa">«Solo una tarjeta dice la verdad. Léela y dime qué ion falta, qué fármaco lo hace caer y por qué eso vuelve peligrosa la digoxina».</p>
+<p data-bloque="enunciado"><b>Enunciado:</b> con la tarjeta 15, identifica el desequilibrio electrolítico, el fármaco que lo causa y explica por qué aumenta la toxicidad de la digoxina. Señala además qué problema añade el ibuprofeno.</p>
+<table data-bloque="datos">
+<tr><th>Tarjeta 15</th><td>Ramón Torres. FC 44 lpm. Náuseas, anorexia, visión borrosa amarillenta, mareo. Potasio 2,9 mEq/L (referencia 3,5 a 5,0). Creatinina 1,6 mg/dL. Digoxina 0,25 mg/día, furosemida 40 mg/día, ibuprofeno 400 mg por su cuenta.</td></tr>
+<tr><th>Tarjetas señuelo</th><td>Las otras 19 tarjetas son de otros pacientes (p. ej., hiperpotasemia con espironolactona, o digoxina con FC 78 y potasio normal).</td></tr>
+</table>
+<div class="sol" data-bloque="solucion">
+<ul>
+<li>Desequilibrio: hipopotasemia.</li>
+<li>Causa: furosemida, un diurético de asa que elimina potasio.</li>
+<li>Mecanismo: la digoxina inhibe la Na+/K+ ATPasa; con menos potasio aumenta su efecto, por lo que sube el riesgo de toxicidad y de arritmias (Castells p. 204 y tabla 28-3).</li>
+<li>Bonus (+5 puntos): el AINE antagoniza el efecto de los diuréticos de asa y debe evitarse la combinación (tabla 28-3); además puede agravar la función renal, y la digoxina se acumula.</li>
+</ul>
+<p>Palabra clave: <b data-codigo="POTASIO">POTASIO</b>.</p>
+</div>
+<ol class="pistas" data-bloque="pistas">
+<li>Compara el valor de potasio con el rango de referencia.</li>
+<li>Entre los fármacos del paciente, uno elimina potasio por la orina.</li>
+<li>La digoxina actúa sobre la bomba Na+/K+ ATPasa; ese ion compite con ella.</li>
+</ol>
+<p data-bloque="desbloquea"><b>Desbloquea:</b> el sobre con la orden médica de reposición.</p>
+</article>
+
+<article class="acertijo" id="acertijo-4" data-orden="4" data-dificultad="3" data-tiempo-min="12" data-respuesta="10-33" data-tipo-respuesta="codigo" data-desbloquea="llave-cajon-antidotos">
+<h3>4. La gota exacta</h3>
+<p class="meta">Tema: cálculo de dosis y velocidad de perfusión; seguridad con electrolitos. Materiales: orden del sobre, etiqueta de ampolla, calculadora.</p>
+<p class="ref" data-referencias="4">Adams apéndice E, pp. 845-846 (gtt/min = mL × gtt/mL ÷ (h × 60)) y cap. 31, p. 446 (cloruro potásico: nunca en bolo ni concentrado, no superar 10 mEq/h IV; contraindicado en hiperpotasemia e insuficiencia renal crónica); Castells cap. 1, pp. 5-6 (perfusión).</p>
+<p data-bloque="narrativa">«El potasio no perdona errores. Calcula los mililitros de ampolla y las gotas por minuto: son dos tramos del candado».</p>
+<p data-bloque="enunciado"><b>Enunciado:</b> calcula el volumen de KCl que debe añadirse y la velocidad de goteo. Después comprueba que la velocidad en mEq/h es segura.</p>
+<table data-bloque="datos">
+<tr><th>Orden</th><td>KCl 20 mEq en 500 mL de suero salino 0,9% a pasar en 5 horas, con monitorización</td></tr>
+<tr><th>Ampolla</th><td>KCl 2 mEq por mL</td></tr>
+<tr><th>Equipo</th><td>20 gotas por mL (macrogoteo). Simplificación: no se suma el volumen del KCl</td></tr>
+</table>
+<div class="sol" data-bloque="solucion">
+<ul>
+<li>Volumen de KCl: 20 mEq ÷ 2 mEq/mL = <b>10 mL</b>.</li>
+<li>Goteo: (500 mL × 20 gtt/mL) ÷ (5 h × 60 min/h) = 33,3, es decir <b>33 gtt/min</b>.</li>
+<li>Velocidad: 20 mEq ÷ 5 h = 4 mEq/h, por debajo del límite de 10 mEq/h.</li>
+<li>Seguridad: confirmar el potasio y la función renal (creatinina 1,6), tener ECG continuo, no administrar nunca en bolo ni sin diluir y avisar al médico ante cualquier duda.</li>
+</ul>
+<p>Código: <b data-codigo="10-33">10-33</b>.</p>
+</div>
+<ol class="pistas" data-bloque="pistas">
+<li>Divide los mEq prescritos entre los mEq por mL de la ampolla.</li>
+<li>Convierte 5 horas a minutos.</li>
+<li>Gotas por minuto = volumen × gotas por mL ÷ minutos.</li>
+</ol>
+<p data-bloque="desbloquea"><b>Desbloquea:</b> la llave del cajón que contiene las tarjetas de antídotos.</p>
+</article>
+
+<article class="acertijo" id="acertijo-5" data-orden="5" data-dificultad="4" data-tiempo-min="10" data-respuesta="FAB" data-tipo-respuesta="palabra" data-desbloquea="candado-final">
+<h3>5. El antídoto escondido</h3>
+<p class="meta">Tema: antídotos de las intoxicaciones. Materiales: 6 tarjetas de intoxicación y 6 de antídoto para emparejar.</p>
+<p class="ref" data-referencias="5">Castells cap. 61, pp. 531-533 (tabla 61-4 de antídotos) y cap. 24, pp. 204-205 (anticuerpos antidigoxina: infusión en 30 min, bolo si hay parada inminente; la hemodiálisis no es eficaz); Adams cap. 24, p. 341 (fragmentos Fab).</p>
+<p data-bloque="narrativa">«Dentro del botiquín hay seis antídotos. Empareja bien y entrega la sigla del que salvará a este paciente si el corazón se desestabiliza».</p>
+<p data-bloque="enunciado"><b>Enunciado:</b> empareja cada intoxicación con su antídoto. Después elige el antídoto para el paciente de la cama 12 con arritmia grave y escribe la sigla del fragmento de anticuerpo.</p>
+<table data-bloque="datos" id="pares-antidotos">
+<tr><th>Intoxicación</th><th>Antídoto (Castells, tabla 61-4)</th></tr>
+<tr data-par="1"><td>Digoxina</td><td>Anticuerpos antidigital (fragmentos Fab)</td></tr>
+<tr data-par="2"><td>Antivitaminas K (acenocumarol)</td><td>Fitometadiona (vitamina K)</td></tr>
+<tr data-par="3"><td>Heparina</td><td>Protamina</td></tr>
+<tr data-par="4"><td>Benzodiacepinas</td><td>Flumazenilo</td></tr>
+<tr data-par="5"><td>Opiáceos</td><td>Naloxona</td></tr>
+<tr data-par="6"><td>Paracetamol</td><td>N-acetilcisteína</td></tr>
+</table>
+<p class="meta">En la sala, las tarjetas se entregan desordenadas.</p>
+<div class="sol" data-bloque="solucion">
+<p>Antídoto del paciente: anticuerpos antidigoxina (fragmentos Fab). Palabra clave: <b data-codigo="FAB">FAB</b>. Según la tabla 61-4, 80 mg de anticuerpo fijan 1 mg de digoxina.</p>
+</div>
+<ol class="pistas" data-bloque="pistas">
+<li>Descarta los antídotos de anticoagulantes, opiáceos y benzodiacepinas.</li>
+<li>El antídoto es un fragmento de anticuerpo.</li>
+<li>Son tres letras: la parte del anticuerpo que se une al fármaco.</li>
+</ol>
+<p data-bloque="desbloquea"><b>Desbloquea:</b> el candado final del botiquín.</p>
+</article>
+</section>
+
+<section id="guia-logica">
+<h2>Guía lógica</h2>
+<table id="cadena-dependencias">
+<tr><th>Paso</th><th>Requiere</th><th>Produce</th><th>Habilita</th></tr>
+<tr data-paso="1"><td>1</td><td>Orden, pulsera y ficha de dosis</td><td>DIGOXINA</td><td>Caja 1 con la ficha técnica</td></tr>
+<tr data-paso="2"><td>2</td><td>Ficha técnica (semivida)</td><td>15</td><td>Tarjeta 15 del archivo clínico</td></tr>
+<tr data-paso="3"><td>3</td><td>Tarjeta 15</td><td>POTASIO</td><td>Sobre con la orden de KCl</td></tr>
+<tr data-paso="4"><td>4</td><td>Orden de KCl y ampolla</td><td>10-33</td><td>Llave del cajón de antídotos</td></tr>
+<tr data-paso="5"><td>5</td><td>Tarjetas de antídotos</td><td>FAB</td><td>Candado final</td></tr>
+</table>
+<p id="candado-final" data-secciones="4" data-combinacion="15-10-33-FAB"><b>Candado final (4 secciones):</b> 15 – 10 – 33 – FAB. Cada acertijo da su pieza y ninguno puede resolverse sin el anterior, porque cada uno entrega el material del siguiente.</p>
+
+<section class="caja" id="desafio-final" data-tiempo-min="8">
+<h3>Desafío final: priorizar las acciones de enfermería</h3>
+<p>Con el botiquín abierto se entrega la digoxinemia de 2,6 ng/mL (Castells: por encima de 2 ng/mL se considera tóxica). El equipo ordena cinco tarjetas de acciones en la secuencia más segura.</p>
+<ol id="orden-correcto">
+<li data-orden="1">No administrar más digoxina (FC por debajo de 60) y avisar de inmediato al médico.</li>
+<li data-orden="2">Tomar el pulso apical durante un minuto y monitorizar con ECG y constantes vitales.</li>
+<li data-orden="3">Solicitar potasio, electrolitos y digoxinemia, y retirar el ibuprofeno.</li>
+<li data-orden="4">Reponer el potasio diluido y lento, con control de diuresis y ECG.</li>
+<li data-orden="5">Si hay arritmia grave o riesgo vital, preparar y administrar los anticuerpos antidigoxina (infusión en 30 min; en bolo si hay parada inminente).</li>
+</ol>
+<p class="ref">Castells cap. 24, pp. 204-206; Adams cap. 24, pp. 339-341.</p>
+</section>
+
+<table id="mecanica-pistas">
+<tr><th>Regla</th><th>Valor</th></tr>
+<tr><td>Pistas por equipo</td><td data-pistas-por-equipo="3">3 incluidas (una por nivel)</td></tr>
+<tr><td>Penalización por pista extra</td><td data-pen-pista="3">3 min</td></tr>
+<tr><td>Penalización por código incorrecto</td><td data-pen-codigo="2">2 min</td></tr>
+</table>
+</section>
+
+<section id="evaluacion">
+<h2>Evaluación</h2>
+<table id="rubrica">
+<tr><th>Criterio</th><th>Peso (%)</th></tr>
+<tr data-peso="25"><td>Seguridad en la administración</td><td>25</td></tr>
+<tr data-peso="25"><td>Cálculos correctos</td><td>25</td></tr>
+<tr data-peso="25"><td>Razonamiento farmacológico</td><td>25</td></tr>
+<tr data-peso="15"><td>Trabajo en equipo y comunicación</td><td>15</td></tr>
+<tr data-peso="10"><td>Priorización de acciones de enfermería</td><td>10</td></tr>
+</table>
+<p>Puntuación sugerida: 100 puntos base, menos las penalizaciones por pistas y errores, más 5 puntos por cada pregunta bonus acertada.</p>
+</section>
+
+<section id="notas-docente">
+<h2>Notas para el docente</h2>
+<ol>
+<li>Datos tomados de los libros: dosis y presentaciones de digoxina, umbrales (FC por debajo de 60, digoxinemia mayor de 2 ng/mL en Castells y 1,8 ng/mL en Adams), factores predisponentes, interacciones, antídotos y fórmulas de goteo.</li>
+<li>Datos didácticos inventados, que no proceden de los libros: el paciente, el potasio de 2,9, la creatinina de 1,6, la digoxinemia de 2,6, la orden de KCl, el factor de goteo de 20 gtt/mL y la regla de 5 semividas.</li>
+<li>Los dos libros difieren ligeramente en algunos umbrales (p. ej., 2 ng/mL frente a 1,8 ng/mL): sirve como pregunta de discusión y conviene fijar el criterio del protocolo local.</li>
+<li>Antes de usarla, validar dosis, concentraciones y velocidades con el protocolo de la institución. Es una actividad educativa, no una pauta clínica.</li>
+<li>Reservar 10 a 15 minutos de debriefing: errores evitados, conceptos a reforzar y diferencias entre ambos libros.</li>
+</ol>
+</section>
+
+<section id="datos-maquina">
+<h2>Resumen legible por código</h2>
+<script type="application/json" id="cadena-json">
+{
+  "version": "1.0",
+  "duracion_min": 60,
+  "acertijos": [
+    {"id": 1, "titulo": "Los correctos que no lo eran", "respuesta": "DIGOXINA", "tipo": "palabra", "tiempo_min": 8, "requiere": null, "desbloquea": "caja-1"},
+    {"id": 2, "titulo": "El reloj de la sangre", "respuesta": "15", "tipo": "numero", "tiempo_min": 10, "requiere": "caja-1", "desbloquea": "tarjeta-15"},
+    {"id": 3, "titulo": "El color amarillo de la alarma", "respuesta": "POTASIO", "tipo": "palabra", "tiempo_min": 12, "requiere": "tarjeta-15", "desbloquea": "sobre-orden-kcl"},
+    {"id": 4, "titulo": "La gota exacta", "respuesta": "10-33", "tipo": "codigo", "tiempo_min": 12, "requiere": "sobre-orden-kcl", "desbloquea": "llave-cajon-antidotos"},
+    {"id": 5, "titulo": "El antídoto escondido", "respuesta": "FAB", "tipo": "palabra", "tiempo_min": 10, "requiere": "llave-cajon-antidotos", "desbloquea": "candado-final"}
+  ],
+  "candado_final": {"secciones": 4, "combinacion": ["15", "10", "33", "FAB"]},
+  "desafio_final": {"tiempo_min": 8, "orden_correcto": [1, 2, 3, 4, 5]},
+  "penalizaciones_min": {"pista_extra": 3, "codigo_incorrecto": 2}
+}
+</script>
+<p class="meta">Este bloque repite la cadena lógica en JSON para que un programa pueda leerla sin analizar el resto del HTML. Cada acertijo del documento también expone <code>data-orden</code>, <code>data-respuesta</code> y <code>data-desbloquea</code>.</p>
+</section>
+
+</main>
+</body>
+</html>
